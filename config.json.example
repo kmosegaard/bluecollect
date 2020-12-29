@@ -1,0 +1,9 @@
+{
+    "devices": [
+        {
+            "name": "Example",
+            "address": "FF:FF:FF:00:00:00",
+            "table_name": "example"
+        }
+    ]
+}
