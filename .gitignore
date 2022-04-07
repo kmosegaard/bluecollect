@@ -1,5 +1,7 @@
 .dub
 /bluecollect
 config.json
+build
+usr
 *.duckdb
 *.duckdb.wal
