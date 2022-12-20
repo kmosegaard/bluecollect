@@ -4,7 +4,7 @@
     "license": "MIT",
     "description": "A minimal D application.",
     "copyright": "Copyright © 2022, kmosegaard",
-    "lflags-posix": [
+    "lflags": [
         "-Lusr/lib"
     ],
     "libs": [
@@ -12,15 +12,18 @@
         "duckdb_static",
         "duckdb_fastpforlib",
         "duckdb_fmt",
+        "duckdb_fsst",
         "duckdb_hyperloglog",
         "duckdb_miniz",
+        "duckdb_mbedtls",
         "duckdb_pg_query",
         "duckdb_re2",
         "duckdb_utf8proc",
-        "parquet_extension"
+        "parquet_extension",
+        "jemalloc_extension"
     ],
-    "preBuildCommands-posix": [
-        "cmake -S external/duckdb -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DBUILD_PARQUET_EXTENSION=1 -DCMAKE_INSTALL_PREFIX=usr",
+    "preBuildCommands": [
+        "cmake -S external/duckdb -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DBUILD_SHELL=OFF -DBUILD_PARQUET_EXTENSION=ON -DBUILD_UNITTESTS=OFF -DCMAKE_INSTALL_PREFIX=usr",
         "cmake --build build -t install"
     ]
 }
